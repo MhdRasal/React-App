@@ -5,7 +5,6 @@ export default function counter(obj) {
     <div>
         <p>Counter{obj.title} : {obj.count}</p>
         <p>Counter{obj.title} : {obj.count}</p>
-
     </div>
   )
 }
