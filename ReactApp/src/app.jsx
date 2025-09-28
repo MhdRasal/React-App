@@ -1,26 +1,26 @@
-import React from 'react';
-import { useState } from 'react';
-import Counter from './components/counter.jsx';
-import './app.css';
+import React,{useState, useEffect} from 'react'
+import Header from './components/Header';
+import Footer from './components/footer';
 
 
-function App(props){
-    const [count, setCount] =useState(0)
-    const addCount = () => {
-        setCount(count + 1)
-        console.log(count);
-    }
-    let obj ={
-        title: "1st counter",
-        count
-    }
-    return (
-        <div>
-            <h1 style={{color: 'red'}}>Hello World!</h1>
-            <Counter {...obj}/>
-            <button onClick={addCount}>Click Me</button>
+function app() {
+    const lightTheme = "lightTheme";
+    const darkTheme = "darkTheme";
+    const [style, changeStyle] = useState(lightTheme);
+
+    useEffect(() => {
+        
+    },[style])
+  return (
+    <div>
+      <Header style={style}/>
+      <Body style={style}/>
+      <Footer style={style}/>
+        <div style={{display: "fixed", bottom: "0", right: "0",height: "50px", width:"50px"}}>
+            <button style={{height:"100%", width: "100%"}} onClick={() => changeStyle(darkTheme)}>Theme</button>
         </div>
-    )
+    </div>
+  )
 }
-export default App
 
+export default app
